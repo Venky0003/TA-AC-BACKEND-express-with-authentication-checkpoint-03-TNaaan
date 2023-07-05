@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+<section class="full-body padding-top">
+  <div class="container full-display">
+    <div class="color-card padding-top-85 margin-center text-center">
+      <h2 class="fs-25">Reset Password</h2>
+      <% if (message) { %>
+      <p><%= message %></p>
+      <% } %>
+      <form
+        action="/users/reset-password/<%= user.uniqueString %>"
+        method="POST"
+      >
+        <label for="password">New Password:</label>
+        <input type="password" name="password" id="password" required />
+        <button type="submit">Reset Password</button>
+      </form>
+    </div>
+  </div>
+</section>
+<%- include('partials/footer') %>

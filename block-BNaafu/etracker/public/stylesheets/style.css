@@ -1,0 +1,468 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* custom styles */
+:root {
+  /* --primary:white;
+  --secondary:  blueviolet;
+  --tertiary: #1a237e ;
+  --quaternary:#f9a825;
+  --black:#000000; */
+  /* --light:      #d7d9df;
+ --dark:       #00141b;
+ --primary:    #2b4551;
+ --secondary:  #086e8e;
+ --info:       #708d97;
+ --accent1:    #36455b;
+ --accent2:    #b45f5d;
+ --accent3:    #9ba7af;
+ --success:    #05a253;
+ --warning:    #e6c805;
+ --danger:     #f3021b; */
+
+  --light: #d9d9da;
+  --dark: #181616;
+  --primary: #2c4c32;
+  --secondary: #656368;
+  --info: #8c897d;
+  --accent1: #4e3d46;
+  --accent2: #887160;
+  --accent3: #9c9593;
+  --success: #399e3e;
+  --warning: #f2c33d;
+  --danger: #ff0037;
+  --white: #ffffff;
+  --blue: blue;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+.justify-center{
+  justify-content: center;
+}
+.align-center {
+  align-items: center;
+}
+.wrap{
+  flex-wrap: wrap;
+}
+.flex-60 {
+  flex: 0 1 60%;
+}
+
+.flex-40 {
+  flex: 0 1 35%;
+}
+
+.container {
+  width: 1380px;
+  max-width: 100%;
+  padding: 0 32px;
+  margin: 0 auto;
+}
+
+/* .container-1 {
+  width: 1380px;
+  max-width: 100%;
+  padding: 0 32px;
+  margin: 0 auto;
+  height: 100vh;
+} */
+.full-display {
+  height: 85vh;
+}
+.height {
+  height: 640px;
+}
+.fs-25 {
+  font-size: 25px;
+}
+.fs-20 {
+  font-size: 20px;
+}
+.fw-600 {
+  font-weight: 600;
+}
+.red {
+  color: red;
+}
+
+/* paddings */
+.padding-5 {
+  padding: 5px;
+}
+
+.padding-10 {
+  padding: 13px;
+}
+
+.padding-top {
+  padding-top: 75px;
+}
+.padding-top-85 {
+  padding-top: 85px;
+}
+
+/* header */
+.header {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+.header-app {
+  color: var(--white);
+  padding: 15px 0;
+}
+
+.links {
+  color: var(--white);
+  margin-right: 18px;
+}
+
+.margin-center {
+  margin: 0 auto;
+}
+
+.margin-top-1 {
+  margin-top: 15px;
+}
+
+.padding-20{
+  padding: 20px;
+}
+.margin-top-45{
+  margin-top: 45px;
+}
+.color-card {
+  background-color: var(--white);
+  width: 575px;
+  height: 450px;
+}
+
+.color-card-1 {
+  background-color: var(--white);
+  width: 675px;
+  height: 550px;
+}
+
+.text-center {
+  text-align: center;
+}
+/* forms login*/
+
+.form-login {
+  width: fit-content;
+  border: 1px solid var(--primary);
+  margin-top: 20px;
+  padding: 20px;
+  color: var(--dark);
+}
+
+.form-control {
+  width: 100%;
+  height: 25px;
+  margin-top: 15px;
+}
+
+.google-login-button {
+  display: inline-block;
+  width: 225px;
+  background-color: var(--white);
+  border: 1px solid var(--light);
+  border-radius: 5px;
+  text-decoration: none;
+  color: var(--accent1);
+}
+
+.google-login-button img {
+  vertical-align: middle;
+  margin-left: 5px;
+  height: 20%;
+  width: 40%;
+}
+
+.full-body {
+  background-color: var(--light);
+  /* color: #f9a939; */
+}
+
+footer {
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+/* btn */
+.btn-primary {
+  padding: 8px 25px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 25px;
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+}
+
+/* onboarding page */
+.titles {
+  margin-top: 50px;
+  color: var(--accent1);
+  font-weight: 600;
+}
+
+.incomes-card {
+  width: 48%;
+  padding: 40px;
+  /* background-color: var(--success); */
+  background-color: var(--white);
+  margin-top: 40px;
+  margin-bottom: 40px;
+  /* border: 1px solid var(--dark); */
+}
+/* .expenses{
+  border: 4px solid var(--danger);
+} */
+
+label {
+  width: 15%;
+  /* display: inline-block; */
+  display: inline-block;
+  text-align: right;
+  vertical-align: middle;
+  /* color: var(--dark); */
+}
+
+.form-control-80 {
+  width: 80%;
+  height: 35px;
+  margin-top: 25px;
+  margin-left: 15px;
+}
+
+.btn-secondary {
+  background-color: var(--success);
+}
+
+.btn-tertiary {
+  background-color: var(--danger);
+}
+
+/* dashboard */
+.height-700{
+  height: 700px;
+}
+
+.cards {
+  background-color: var(--white);
+  padding: 40px;
+  margin-bottom: 15px;
+  overflow-y: auto; 
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  /* justify-content: center; */
+}
+
+.grid-item {
+  padding: 10px;
+  border: 1px solid var(--dark);
+}
+
+.success {
+  color: var(--success);
+}
+
+.danger {
+  color: var(--danger);
+}
+
+
+/* filter */
+
+/* .filter  label{
+  width: 15%;
+  display: inline;
+} */
+
+/* .filter-form{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items:left;
+} */
+
+.form-label {
+  flex: 0 0 25%;
+  white-space: nowrap;
+  /* overflow: hidden; */
+  margin-top: 25px;
+  margin-right: 2px;
+}
+
+.form-control-70{
+  flex: 0 1 70%;
+  height: 35px;
+  margin-top: 25px;
+}
+
+.filter button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.clear-btn{
+  margin-top: 25px;
+  margin-left: 95px;
+}
+ 
+

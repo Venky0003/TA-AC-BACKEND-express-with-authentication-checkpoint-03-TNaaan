@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+<section class="full-body padding-top">
+  <div class="container full-display">
+    <div class="color-card-1 margin-center padding-20">
+    <form class="form-login  margin-top-45" action="/users/register" method="POST">
+      <h3 class="fs-25 fw-600 text-center">New User Registration</h3>
+      <input class="form-control" type="text" name="name" placeholder="Name" />
+      <input
+        class="form-control"
+        type="text"
+        name="email"
+        placeholder="Email"
+      />
+      <input
+        class="form-control"
+        type="text"
+        name="password"
+        placeholder="Password"
+      />
+      <input class="form-control" type="Number" name="age" placeholder="Your age" />
+      <input class="form-control" type="Number" name="phone" id="" placeholder="Phone Number" />
+      <input class="form-control" type="text" name="country" placeholder="Your Country" />
+      <div class="text-center">
+        <input class="btn-primary" type="Submit" value="Create Account" />
+      </div>
+    </form>
+  </div>
+  </div>
+</section>
+<%- include('partials/footer') %>
