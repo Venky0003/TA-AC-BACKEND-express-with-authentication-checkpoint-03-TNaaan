@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container flex justify-between align-center">
+        <a href="/"><h2 class="header-app fs-25">SmartSpend</h2></a>
+        <% if(user) {%>
+        <nav>
+          <a class="links" href=""><%= user.name %></a>
+          <a class="links" href="/onboarding">Add Income & Expenses</a>
+          <a class="links" href="/dashboard">View Income & Expenses</a>
+          <a class="links" href="/logout">Logout</a>
+        </nav>
+        <%} else {%>
+        <nav>
+          <a class="links" href="/auth/github">Login with github</a>
+          <a class="links" href="/auth/google">Login with google</a>
+          <a class="links" href="/users/register">Register</a>
+          <a class="links" href="/users/login">Login</a>
+        </nav>
+        <%}%>
+      </div>
+    </header>
+
