@@ -26,7 +26,7 @@ router.get('/', auth.lists, (req, res, next) => {
   }
 
   if (source && !fromDate) {
-    query = { source };
+    query = {user: req.user.id, source };
   }
   else if (source) {
     query.source = source;
@@ -49,6 +49,7 @@ router.get('/', auth.lists, (req, res, next) => {
     .then((incomes) => {
       Expense.find(query)
         .then((expenses) => {
+          
           let totalIncome = incomes.reduce(
             (total, income) => total + income.amount,
             0
@@ -63,8 +64,8 @@ router.get('/', auth.lists, (req, res, next) => {
           res.render('dashboard', {
             expenselist: expenses.length > 0,
             incomelist: incomes.length > 0,
-            incomes: validIncomes,
-            expenses: validExpenses,
+            incomes,
+            expenses,
             source,
             category,
             totalSavings,
