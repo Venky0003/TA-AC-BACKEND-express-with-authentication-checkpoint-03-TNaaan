@@ -1,0 +1,47 @@
+<%- include('partials/header') %>
+<section class="full-body padding-top">
+  <div class="container full-display">
+    <div class="color-card margin-center padding-top-85 ">
+    <div class="text-center">
+      <div>
+        <a href="/users/forgot-password">Forgot Password</a>
+      </div>
+      <a href="/auth/github" class="google-login-button padding-5">Login with 
+        <img src="/images/<%= 'github1.png' %>" alt="Sign in with github" />
+      </a>
+      <a href="/auth/google" class="google-login-button padding-10">Login  with
+        <img src="/images/<%= 'google.png' %>" alt="Sign in with Google" />
+      </a>
+    </div>
+    <form
+      class="form-login margin-center text-center"
+      action="/users/login"
+      method="POST"
+    >
+      <h3 class="form-header fs-25">User Login</h3>
+      <% if(error) { %>
+      <p class="red"><%= error %></p>
+      <% } %>
+      <input
+        class="form-control"
+        type="text"
+        name="email"
+        id=""
+        placeholder="Email"
+      />
+      <input
+        class="form-control"
+        type="text"
+        name="password"
+        id=""
+        placeholder="password"
+      />
+      <input class="btn-primary" type="submit" value="login" />
+    </form>
+  </div>
+</div>
+</section>
+<%- include('partials/footer') %>
+
+
+<!-- <a href="/users/forgot-password">Forgot Password</a> -->

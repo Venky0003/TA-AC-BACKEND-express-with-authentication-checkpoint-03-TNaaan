@@ -1,0 +1,85 @@
+<%- include('partials/header') %>
+<section class="full-body">
+  <div class="container flex justify-between align-center">
+    <div class="flex-60 cards height-700 margin-top-1">
+      <h2 class="fs-25 fw-600 text-center">Monthly Income and Expense List</h2>
+      <div class="grid-container">
+        <div class="grid-item">
+          <h2 class="fs-25 fw-600">Incomes</h2>
+          <% incomes.forEach(incomeItem => { %>
+          <p>Source: <%= incomeItem.source %> %></p>
+          <p>Amount: <%= incomeItem.amount %></p>
+          <p>Date: <%= incomeItem.date.toDateString() %></p>
+          <a href="/dashboard/income/<%=incomeItem._id %>/delete">
+            <button class="btn-primary btn-tertiary">Delete</button>
+          </a>
+          <hr />
+          <% }) %>
+        </div>
+        <div class="grid-item">
+          <h2 class="fs-25 fw-600 margin-top-1">Expenses</h2>
+          <% expenses.forEach(expenseItem => { %>
+          <p>Category: <%= expenseItem.category %></p>
+          <p>Amount: <%= expenseItem.amount %></p>
+          <p>Date: <%= expenseItem.date.toDateString() %></p>
+          <a href="/dashboard/expense/<%=expenseItem._id %>/delete">
+            <button class="btn-primary btn-tertiary">Delete</button>
+          </a>
+          <hr />
+          <% }) %>
+        </div>
+      </div>
+      <div class="text-center fs-25 fs-600">
+        <p>
+          Total Savings:
+          <span class="fw-600 <%= totalSavings >= 0 ? 'success' : 'danger' %>"
+            ><%= totalSavings %></span
+          >
+        </p>
+      </div>
+    </div>
+
+    <div class="filter flex-40 cards">
+      <h3 class="fs-25 text-center fw-600">Filter</h3>
+      <form
+        action="/dashboard"
+        method="GET"
+        class="flex justify-between align-center wrap"
+      >
+        <label class="form-label" for="fromDate">From date :</label>
+        <input
+          class="form-control-70"
+          type="date"
+          name="fromDate"
+          id="fromDate"
+        />
+
+        <label class="form-label" for="toDate">To date :</label>
+        <input class="form-control-70" type="date" name="toDate" id="toDate" />
+
+        <label class="form-label" for="source">Income source :</label>
+        <select class="form-control-70" name="source" id="source">
+          <option value="">Select source</option>
+          <% sources.forEach(s => { %>
+          <option value="<%= s %>"><%= s %></option>
+          <% }) %>
+        </select>
+
+        <label class="form-label" for="category">Expense category :</label>
+        <select class="form-control-70" name="category" id="category">
+          <option value="">Select category</option>
+          <% categories.forEach(c => { %>
+          <option value="<%= c %>"><%= c %></option>
+          <% }) %>
+        </select>
+        <div class=" flex justify-between align-center">
+          <button class="btn-primary"  type="submit">Apply Filters</button>
+          <div class="clear-btn">
+          <a href="/dashboard" class="btn-primary">Clear Filters</a>
+        </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<%- include('partials/footer') %>

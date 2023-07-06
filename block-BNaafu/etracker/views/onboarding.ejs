@@ -1,0 +1,65 @@
+<%- include('partials/header') %>
+<section class="full-body">
+  <div class="container height text-center flex justify-between">
+    <div class="incomes-card">
+      <h2 class="fs-25 titles">Add Income</h2>
+      <form action="/onboarding/income" method="POST">
+        <label for="source">Source:</label>
+        <select class="form-control-80" name="source" id="source">
+          <option value="">Please Select your source</option>
+          <option value="salary">Salary Income</option>
+          <option value="interest ">Interest Income</option>
+          <option value="dividend">Dividend Income</option>
+          <option value="capital">Capital Gains Income.</option>
+          <option value="rental">Rental Income</option>
+          <option value="profit">Profit Income.</option>
+          <option value="royalty">Royalty Income</option>
+        </select>
+        <label for="amount">Amount:</label>
+        <input
+          class="form-control-80"
+          type="number"
+          id="amount"
+          name="amount"
+          required
+        />
+
+        <label for="date">Date:</label>
+        <input
+          class="form-control-80"
+          type="date"
+          id="date"
+          name="date"
+          required
+        />
+
+        <button class="btn-primary btn-secondary" type="submit">Add Income</button>
+      </form>
+    </div>
+    <div class="incomes-card expenses">
+      <h2 class="titles fs-25">Add Expense</h2>
+      <form action="/onboarding/expense" method="POST">
+        <label for="category">Category:</label>
+        <select class="form-control-80" name="category" id="category">
+          <option value="">Please Select your source</option>
+          <option value="housing">Housing</option>
+          <option value="transportation">Transportation</option>
+          <option value="food ">Food</option>
+          <option value="utilities">Utilities</option>
+          <option value="insurance">Insurance</option>
+          <option value="health">Medical & Healthcare</option>
+          <option value="debt">Saving, Investing, & Debt Payments</option>
+          <option value="personal">Personal Spending</option>
+          <option value="entertainment">Recreation & Entertainment</option>
+          <option value="miscellaneous">Miscellaneous</option>
+        </select>
+        <label for="amount">Amount:</label>
+        <input class="form-control-80" type="Number" name="amount" id="amount" />
+        <label for="date">Date:</label>
+        <input class="form-control-80" type="Date" name="date" id="date" />
+        <input class="btn-primary btn-tertiary" type="submit" value="Add Expense" />
+      </form>
+    </div>
+  </div>
+</section>
+<%- include('partials/footer') %>
